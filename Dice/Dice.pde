@@ -1,14 +1,27 @@
 Die aDie;
-//Die aSecondDie;
-//Die aThirdDie;
+Die aSecondDie;
+Die aThirdDie;
+Die a2Die;
+Die a2SecondDie;
+Die a2ThirdDie;
+Die a3Die;
+Die a3SecondDie;
+Die a3ThirdDie;
 
 void setup(){
   size(500, 500);
   //no loop means that draw is only called once
   //OR if you ever call redraw()
   aDie = new Die(0, 0);
-  //aSecondDie = new Die(60, 0);
-  //aThirdDie = new Die(120, 0);
+  aSecondDie = new Die(60, 0);
+  aThirdDie = new Die(120, 0);
+  a2Die = new Die(0, 60);
+  a2SecondDie = new Die(60, 60);
+  a2ThirdDie = new Die(120, 60);
+  a3Die = new Die(0, 120);
+  a3SecondDie = new Die(60, 120);
+  a3ThirdDie = new Die(120, 120);
+  
   noLoop();
 }
 
@@ -18,11 +31,30 @@ void draw(){
   aDie.roll();
   aDie.show();
   
-  //aSecondDie.roll();
- // aSecondDie.show();
+  aSecondDie.roll();
+  aSecondDie.show();
   
- // aThirdDie.roll();
-  //aThirdDie.show();
+  aThirdDie.roll();
+  aThirdDie.show();
+  
+  a2Die.roll();
+  a2Die.show();
+  
+  a2SecondDie.roll();
+  a2SecondDie.show();
+  
+  a2ThirdDie.roll();
+  a2ThirdDie.show();
+  
+  a3Die.roll();
+  a3Die.show();
+
+  a3SecondDie.roll();
+  a3SecondDie.show();
+  
+  a3ThirdDie.roll();
+  a3ThirdDie.show();
+  
   
   
 }
@@ -55,7 +87,7 @@ class Die {
 		//your code here, 
 		//should randomly assign a value from 1 to 6
   rollNumber = (int)(Math.random() * 6) + 1;
-  println(aDie.rollNumber);
+  println(rollNumber);
   
 	}	
 	/*
@@ -72,45 +104,45 @@ class Die {
   
   stroke(0);
   fill(0);
-  if(aDie.rollNumber == 1){
+  if(rollNumber == 1){
     //use for middle dot coordinate/size
-    ellipse(45, 45, 10, 10);
-  } else if(aDie.rollNumber == 2){
+    ellipse(x_pos + 45, y_pos + 45, 10, 10);
+  } else if(rollNumber == 2){
     
-    ellipse(30,30, 10, 10);
-    ellipse(60,60, 10, 10);
-  } else if(aDie.rollNumber == 3){
+    ellipse(x_pos + 30, y_pos + 30, 10, 10);
+    ellipse(x_pos + 60, y_pos +60, 10, 10);
+  } else if(rollNumber == 3){
     
-    ellipse(30,30, 10, 10);
-    ellipse(45, 45, 10, 10);
-    ellipse(60, 60, 10, 10);
-  } else if (aDie.rollNumber == 4){
+    ellipse(x_pos + 30, y_pos + 30, 10, 10);
+    ellipse(x_pos + 45, y_pos + 45, 10, 10);
+    ellipse(x_pos + 60, y_pos + 60, 10, 10);
+  } else if (rollNumber == 4){
     //top row
-    ellipse(30,30, 10, 10);
-    ellipse(60, 30, 10, 10);
+    ellipse(x_pos + 30, y_pos + 30, 10, 10);
+    ellipse(x_pos + 60, y_pos + 30, 10, 10);
     
     //bottom row
-    ellipse(60, 60, 10, 10);
-    ellipse(30, 60, 10, 10);
+    ellipse(x_pos + 60, y_pos + 60, 10, 10);
+    ellipse(x_pos + 30, y_pos + 60, 10, 10);
     
-  } else if (aDie.rollNumber == 5){
+  } else if (rollNumber == 5){
     
-    ellipse(30,30, 10, 10);
-    ellipse(60, 30, 10, 10);
-    ellipse(60, 60, 10, 10);
-    ellipse(30, 60, 10, 10);
-    ellipse(45, 45, 10, 10);
+    ellipse(x_pos + 30, y_pos + 30, 10, 10);
+    ellipse(x_pos + 60, y_pos + 30, 10, 10);
+    ellipse(x_pos + 60, y_pos + 60, 10, 10);
+    ellipse(x_pos + 30, y_pos + 60, 10, 10);
+    ellipse(x_pos + 45, y_pos + 45, 10, 10);
     
   } else {
     //top row
-    ellipse(30, 30, 10, 10);
-    ellipse(45, 30, 10, 10);
-    ellipse(60, 30, 10, 10);
+    ellipse(x_pos + 30, y_pos + 30, 10, 10);
+    ellipse(x_pos + 45, y_pos + 30, 10, 10);
+    ellipse(x_pos + 60, y_pos + 30, 10, 10);
     
     //bottom row
-    ellipse(60, 60, 10, 10);
-    ellipse(30, 60, 10, 10);
-    ellipse(45, 60, 10, 10);
+    ellipse(x_pos + 60, y_pos + 60, 10, 10);
+    ellipse(x_pos + 30, y_pos + 60, 10, 10);
+    ellipse(x_pos + 45, y_pos + 60, 10, 10);
   }
 	}
 }
